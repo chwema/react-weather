@@ -5,9 +5,17 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      Weather App
+      <h1>Weather App</h1>
       <footer>
-        This project was coded by Chido Chimbetete and is
+        This project was coded by{" "}
+        <a
+          href="https://www.linkedin.com/in/chido-chimbetete-5291bb177/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Chido Chimbetete
+        </a>{" "}
+        and is{" "}
         <a
           href="https://github.com/chwema/weather-react"
           rel="noreferrer"
