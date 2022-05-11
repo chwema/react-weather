@@ -6,16 +6,15 @@ export default function Weather() {
       <div className="container">
         <form className="search-form">
           <div className="row">
-            <div className="col-9">
+            <div className="col-6">
               <input
                 type="search"
                 placeholder="Type a city.."
                 className="form-control shadow-sm"
+                autoFocus="on"
               />
-              <span>
-                <input type="submit" value="🔍" className="searchbutton" />
-                <input type="submit" value="📍" className="button" />
-              </span>
+              <input type="submit" value="🔍" className="searchbutton" />
+              <input type="submit" value="📍" className="button" />
             </div>
           </div>
         </form>
@@ -32,16 +31,8 @@ export default function Weather() {
           />
         </div>
         <ul>
-          <li>Cloudy</li>
           <li>Friday</li>
-        </ul>
-        <br />
-        <br />
-
-        <h5>
-          <div className="description"></div>
-        </h5>
-        <ul>
+          <li className="description">Description: partly_cloudy</li>
           <li>
             Humidity: <span>30</span>%{" "}
           </li>
@@ -49,7 +40,6 @@ export default function Weather() {
             Windspeed: <span>70</span>km/h
           </li>
         </ul>
-        <br />
         <br />
         <div class="row">
           <div class="col-sm-2">
