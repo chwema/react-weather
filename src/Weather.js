@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Weather.css";
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <div className="container">
-        <form className="search-form">
+import WeatherInfo from "./WeatherInfo";
+
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
+  function handleResponse(response) {
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      humidity: response.data.main.humidity,
+      icon: response.data.weather[0].icon,
+      description: response.data.Weather[0].description,
+      date: new Date(response.data.dt * 1000),
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "dc7326e797da82e0121c6f7210c513df";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form className="search-form" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-6">
               <input
@@ -12,99 +47,18 @@ export default function Weather() {
                 placeholder="Type a city.."
                 className="form-control shadow-sm"
                 autoFocus="on"
+                onChange={handleCityChange}
               />
               <input type="submit" value="🔍" className="searchbutton" />
               <input type="submit" value="📍" className="button" />
             </div>
           </div>
         </form>
-
-        <h1>Paris</h1>
-
-        <div className="units">
-          <h3>15°C</h3>
-        </div>
-        <div className="weather-icon">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-            alt="Clear"
-          />
-        </div>
-        <ul>
-          <li>Friday</li>
-          <li className="description">Description: partly_cloudy</li>
-          <li>
-            Humidity: <span>30</span>%{" "}
-          </li>
-          <li>
-            Windspeed: <span>70</span>km/h
-          </li>
-        </ul>
-        <br />
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="forecast-day">Sat</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/rain.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">23</div>
-          </div>
-
-          <div class="col-sm-2">
-            <div class="forecast-day">Sun</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">19</div>
-          </div>
-          <div class="col-sm-2">
-            <div class="forecast-day">Mon</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">22</div>
-          </div>
-          <div class="col-sm-2">
-            <div class="forecast-day">Tue</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">33</div>
-          </div>
-          <div class="col-sm-2">
-            <div class="forecast-day">Wed</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/windy.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">26</div>
-          </div>
-          <div class="col-sm-2">
-            <div class="forecast-day">Thru</div>
-            <div class="forecast-icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/48/sunny.png"
-                alt="Clear"
-              />
-            </div>
-            <div class="forecast-temp">17</div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }
