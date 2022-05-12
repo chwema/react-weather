@@ -1,5 +1,6 @@
 import React from "react";
 import Weather from "./Weather";
+
 import "./App.css";
 
 export default function App() {
@@ -11,7 +12,7 @@ export default function App() {
           This project was coded by{" "}
           <a
             href="https://www.linkedin.com/in/chido-chimbetete-5291bb177/"
-            rel="noreferrer"
+            rel="noreferrer  noopener"
             target="_blank"
           >
             Chido Chimbetete
@@ -19,7 +20,7 @@ export default function App() {
           and is{" "}
           <a
             href="https://github.com/chwema/weather-react"
-            rel="noreferrer"
+            rel="noreferrer noopener"
             target="_blank"
           >
             open-sourced on GitHub
