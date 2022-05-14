@@ -3,6 +3,17 @@
   margin: 20px;
 }
 .App footer {
-  font-size: 11px;
+  font-size: 15px;
   margin: 10px 0;
+  color: #0c596b;
+  font-weight: 600;
+}
+.App .info-link {
+  color: #01c0dc;
+  text-decoration: none;
+}
+.App .info-link:hover {
+  cursor: pointer;
+  color: #0c596b;
+  transition: all 200ms ease-in-out;
 }

@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/031/383/original/pic3.jpg?1649474158);
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/031/384/original/pic2.jpg?1649474174);
   image-resolution: fixed;
   width: auto;
   height: auto;
@@ -126,16 +126,6 @@ footer {
 .weather-forecast-temperatures {
   font-size: 13px;
   color: #1d242b;
-}
-.open-source-code {
-  color: #0c596b;
-  font-weight: 600;
-  text-decoration: none;
-}
-.open-source-code :hover {
-  cursor: pointer;
-  color: #01c0dc;
-  transition: all 200ms ease-in-out;
 }
 
 .weather-icon canvas {

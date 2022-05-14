@@ -11,6 +11,7 @@ export default function App() {
         <footer>
           This project was coded by{" "}
           <a
+            class="info-link"
             href="https://www.linkedin.com/in/chido-chimbetete-5291bb177/"
             rel="noreferrer  noopener"
             target="_blank"
@@ -19,6 +20,7 @@ export default function App() {
           </a>{" "}
           and is{" "}
           <a
+            class="info-link"
             href="https://github.com/chwema/weather-react"
             rel="noreferrer noopener"
             target="_blank"
