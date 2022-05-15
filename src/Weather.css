@@ -7,14 +7,7 @@ body {
   background-size: cover;
   margin: 50px;
 }
-h1 {
-  color: #a2d0ca;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 38px;
-  text-align: center;
-  font-weight: 700;
-  padding: 5px;
-}
+
 ul {
   background: radial-gradient(
     circle at 10% 20%,
@@ -27,7 +20,8 @@ ul {
 }
 li {
   color: #1d242b;
-  font-size: 18px;
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 400;
   height: 19;
   line-height: 1.5;
