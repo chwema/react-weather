@@ -4,7 +4,7 @@
 }
 .App footer {
   font-size: 15px;
-  margin: 10px 0;
+  margin: 30px 0;
   color: #0c596b;
   font-weight: 600;
 }
@@ -16,4 +16,16 @@
   cursor: pointer;
   color: #0c596b;
   transition: all 200ms ease-in-out;
+}
+
+@media (max-width: 607px) {
+  .App {
+    font-size: 12;
+    width: 500px;
+  }
+  footer {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+  }
 }

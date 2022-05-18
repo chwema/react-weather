@@ -9,7 +9,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Paris" />
         <footer>
-          This project was coded by{" "}
+          coded by{" "}
           <a
             class="info-link"
             href="https://www.linkedin.com/in/chido-chimbetete-5291bb177/"
@@ -25,7 +25,7 @@ export default function App() {
             rel="noreferrer noopener"
             target="_blank"
           >
-            open-sourced on GitHub
+            open-sourced
           </a>
         </footer>
       </div>
